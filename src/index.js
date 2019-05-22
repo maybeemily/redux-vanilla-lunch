@@ -10,10 +10,12 @@ function reducer(state = initialState, action) {
   switch(action.type) {
     case 'ADD_DRINK':
       return { ...state, drink: action.payload };
+    default:
+      return state;
   }
 }
 
-const store = createStore();
+const store = createStore(reducer);
 console.log(store.getState());
 
 store.dispatch({
