@@ -8,9 +8,9 @@ describe('post actions', () => {
     });
   });
   it('removes a post', () => {
-    expect(removePost({ title: 'title', body: 'body' })).toEqual({
+    expect(removePost(2)).toEqual({
       type: REMOVE_POST,
-      payload: { title: 'title', body: 'body' }
+      payload: 2
     });
   });
 });

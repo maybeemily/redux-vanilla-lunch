@@ -18,7 +18,6 @@ function reducer(state = initialState, action) {
   }
 }
 
-
 const store = createStore(reducer);
 
 store.dispatch(addPost({ title: 'cool blog post', body: 'this is a body' }));
