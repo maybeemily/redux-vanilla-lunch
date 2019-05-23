@@ -10,8 +10,8 @@ export const removePost = postId => ({
   payload: postId
 });
 
-export const UPDATE_POST = 'UPDATE_POST';
-export const updatePost = (postId, postUpdate) => ({
-  type: UPDATE_POST,
-  payload: { postId, postUpdate }
-});
+// export const UPDATE_POST = 'UPDATE_POST';
+// export const updatePost = (postId, postUpdate) => ({
+//   type: UPDATE_POST,
+//   payload: { postId, postUpdate }
+// });
