@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
-import { addPost, removePost } from './actions/postActions';
+import { addPost } from './actions/postActions';
 import reducer from './reducers';
-import { addComment } from './actions/commentActions';
+//import { addComment } from './actions/commentActions';
 //cannot mutate the original state. always need to hand it a new state
 
 const store = createStore(
