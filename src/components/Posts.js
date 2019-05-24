@@ -18,10 +18,10 @@ function Posts({ posts }) {
 
 Posts.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.shape({
-      title: PropTypes.string.isRequired
-    }).isRequired,
-  })).isRequired
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired
+  }))
 };
 
 export default Posts;

@@ -7,7 +7,7 @@ describe('post reducer test', () => {
     const initialState = {};
     const newState = postReducer(initialState, addPost('post title', 'post body'));
     expect(Object.values(newState)).toEqual([
-      { title:'post title', body: 'post body' }
+      { title:'post title', body: 'post body', id: expect.any(String) }
     ]);
   });
 

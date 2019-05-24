@@ -12,8 +12,11 @@ function removePost(id, state) {
 
 export default function postReducer(state = initialState, action) {
   switch(action.type) {
-    case ADD_POST:
-      return { ...state, [uuid()]: action.payload }; //adding a uuid when the post is created
+    
+    case ADD_POST: {
+      const id = uuid();
+      return { ...state, [id]: { ...action.payload, id } }; //adding a uuid when the post is created
+    }
     case REMOVE_POST:
       //removing by id - which is the payload here since thats what we pass to the function - and the post, which is retrieved by the state
       return removePost(action.payload, state); 
