@@ -1,14 +1,14 @@
-import { ADD_COMMENT } from '../actions/commentActions';
+import { ADD_COMMENT, REMOVE_COMMENT } from '../actions/commentActions';
 import uuid from 'uuid/v4';
 
 const initialState = {};
 
-// posts: {
-//  adbidaklvjdakfjdlkanlkd: {
-//    title: 'my title',
-//    body: 'cool body'
-// }
-//}
+function deleteComment(id, comments) {
+  const newComments = { ...comments };
+  delete newComments[id];
+  return newComments;
+}
+
 
 export default function commentReducer(state = initialState, action) {
   switch(action.type) {
@@ -18,6 +18,8 @@ export default function commentReducer(state = initialState, action) {
         [uuid()]: action.payload.comment 
       }
       };
+    case REMOVE_COMMENT:
+      return { ...state, comments: deleteComment(action.payload, state.comments) };
     default: 
       return state;
   }
