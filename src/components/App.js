@@ -1,9 +1,10 @@
 import React from 'react';
+import CreatePost from '../containers/posts/CreatePost';
 
 export default function App() {
   return (
     <>
-    <h1> hello to you </h1>
+    <CreatePost/>
     </>
   );
 }
