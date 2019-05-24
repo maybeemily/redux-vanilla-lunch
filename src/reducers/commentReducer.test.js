@@ -10,23 +10,21 @@ describe('comment reducer', () => {
   });
   it('handles the delete comment action', () => {
     const state = {
-      comments: {
-        ab1234: {
-          1234: 'my comment'
-        },
-        ab1235: {
-          1235: 'my cool comment'
-        }
+      ab1234: {
+        1234: 'my comment'
+      },
+      ab1235: {
+        1235: 'my cool comment'
       }
     };
 
     const newState = commentReducer(state, removeComment('ab1234', '1234'));
     ///// write the dang remove comment now
     expect(newState).toEqual({
-      comments: {
-        ab1235: {
-          1235: 'my cool comment'
-        }
+      ab1234: {
+      },
+      ab1235: {
+        1235: 'my cool comment'
       }
     });
   });

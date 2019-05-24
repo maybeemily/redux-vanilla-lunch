@@ -4,8 +4,8 @@ import uuid from 'uuid/v4';
 
 const initialState = {};
 
-function removePost(id, posts) {
-  const newPosts = { ...posts };
+function removePost(id, state) {
+  const newPosts = { ...state };
   delete newPosts[id];
   return newPosts;
 }
@@ -13,10 +13,10 @@ function removePost(id, posts) {
 export default function postReducer(state = initialState, action) {
   switch(action.type) {
     case ADD_POST:
-      return { ...state, posts: { ...state.posts, [uuid()]: action.payload } }; //adding a uuid when the post is created
+      return { ...state, [uuid()]: action.payload }; //adding a uuid when the post is created
     case REMOVE_POST:
       //removing by id - which is the payload here since thats what we pass to the function - and the post, which is retrieved by the state
-      return { ...state, posts: removePost(action.payload, state.posts) }; 
+      return removePost(action.payload, state); 
     default:
       return state;
   }

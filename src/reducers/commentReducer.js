@@ -3,12 +3,12 @@ import uuid from 'uuid/v4';
 
 const initialState = {};
 
-function deleteComment(id, comments) {
-  const newComments = { ...comments };
-  delete newComments[id];
+function deleteComment(postId, commentId, state) {
+  const newPostComments = { ...state[postId] };
+  delete newPostComments[commentId];
+  const newComments = { ...state, [postId]:newPostComments };
   return newComments;
 }
-
 
 export default function commentReducer(state = initialState, action) {
   switch(action.type) {
@@ -19,7 +19,7 @@ export default function commentReducer(state = initialState, action) {
       }
       };
     case REMOVE_COMMENT:
-      return { ...state, comments: deleteComment(action.payload, state.comments) };
+      return deleteComment(action.payload.postId, action.payload.commentId, state);
     default: 
       return state;
   }
