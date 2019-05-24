@@ -1,5 +1,5 @@
 import commentReducer from './commentReducer';
-import { addComment } from '../actions/commentActions';
+import { addComment, removeComment } from '../actions/commentActions';
 
 describe('comment reducer', () => {
   it('handles the post comment action', () => {
@@ -7,5 +7,27 @@ describe('comment reducer', () => {
     expect(Object.values(newState['1234'])).toEqual([
       'this is my comment'
     ]);
+  });
+  it('handles the delete comment action', () => {
+    const state = {
+      comments: {
+        ab1234: {
+          1234: 'my comment'
+        },
+        ab1235: {
+          1235: 'my cool comment'
+        }
+      }
+    };
+
+    const newState = commentReducer(state, removeComment('ab1234', '1234'));
+    ///// write the dang remove comment now
+    expect(newState).toEqual({
+      comments: {
+        ab1235: {
+          1235: 'my cool comment'
+        }
+      }
+    });
   });
 });

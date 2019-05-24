@@ -1,9 +1,7 @@
 import { ADD_COMMENT } from '../actions/commentActions';
 import uuid from 'uuid/v4';
 
-const initialState = {
-  comments: {}
-};
+const initialState = {};
 
 // posts: {
 //  adbidaklvjdakfjdlkanlkd: {

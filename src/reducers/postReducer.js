@@ -2,9 +2,7 @@ import { ADD_POST, REMOVE_POST } from '../actions/postActions';
 import uuid from 'uuid/v4';
 
 
-const initialState = {
-  posts: {}
-};
+const initialState = {};
 
 function removePost(id, posts) {
   const newPosts = { ...posts };
