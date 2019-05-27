@@ -5,7 +5,11 @@ describe('comment reducer', () => {
   it('handles the post comment action', () => {
     const newState = commentReducer({}, addComment('1234', 'this is my comment'));
     expect(Object.values(newState['1234'])).toEqual([
-      'this is my comment'
+      {
+        'comment': 'this is my comment',
+        'id': expect.any(String),
+        'postId': '1234',
+      }
     ]);
   });
   it('handles the delete comment action', () => {

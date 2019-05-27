@@ -16,9 +16,9 @@ describe('comment selectors', () => {
         }
       }
     };
-    expect(getComments(state, 1235)).toEqual({
-      bb3a: 'another cool comment',
-      er34: 'cool commmmments'
-    });
+    expect(getComments(state, 1235)).toEqual([
+      'another cool comment',
+      'cool commmmments'
+    ]);
   });
 });
