@@ -19,12 +19,12 @@ const deleteAllComments = (postId, state) => {
 
 export default function commentReducer(state = initialState, action) {
   switch(action.type) {
-    case ADD_COMMENT:
+    case ADD_COMMENT:{
+      const id = uuid();
       return { ...state, [action.payload.postId]: {
         ...(state[action.payload.postId] || {}),
-        [uuid()]: action.payload.comment 
-      }
-      };
+        [id]: { ...action.payload, id } } };
+    }
     case REMOVE_COMMENT:
       return deleteComment(action.payload.postId, action.payload.commentId, state);
       

@@ -1,1 +1,1 @@
-export const getComments = (state, postId) => state.comments[postId];
+export const getComments = (state, postId) => Object.values(state.comments[postId]);
