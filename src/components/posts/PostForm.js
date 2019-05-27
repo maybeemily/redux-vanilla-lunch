@@ -26,8 +26,8 @@ export default class PostForm extends PureComponent {
     const { title, body } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <input name="title" value={title} onChange={this.handleChange}/>
-        <textarea name="body" value={body} onChange={this.handleChange}></textarea>
+        <p>Title:</p> <input name="title" value={title} onChange={this.handleChange}/><br />
+        <p>Post: </p><textarea name="body" value={body} onChange={this.handleChange}></textarea>
         <button>Submit</button>
       </form>
     );
