@@ -6,6 +6,7 @@ const mapStateToProps = state => ({
   posts: getPosts(state)
 });
 
+
 export default connect (
   mapStateToProps,
   null
