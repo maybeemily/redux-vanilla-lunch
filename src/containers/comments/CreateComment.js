@@ -1,12 +1,6 @@
 import { connect } from 'react-redux';
 import { addComment } from '../../actions/commentActions';
 import CommentForm from '../../components/comments/CommentForm';
-import { getComments } from '../../selectors/commentSelectors';
-
-const mapStateToProps = (state, { postId }) => ({
-  comments: getComments(state, postId)
-});
-
 
 const mapDispatchToProps = (dispatch, props) => ({
   onSubmit(comment) {
@@ -15,6 +9,6 @@ const mapDispatchToProps = (dispatch, props) => ({
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(CommentForm);
